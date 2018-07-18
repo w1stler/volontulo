@@ -34,6 +34,7 @@ from apps.volontulo import permissions
 from apps.volontulo import serializers
 from apps.volontulo.authentication import CsrfExemptSessionAuthentication
 from apps.volontulo.lib.email import send_mail
+from apps.volontulo.models import Offer
 from apps.volontulo.models import Organization
 from apps.volontulo.models import UserProfile
 from apps.volontulo.serializers import (
@@ -219,6 +220,23 @@ class OfferViewSet(viewsets.ModelViewSet):
                 Q(organization__in=user.userprofile.organizations.all())
             )
         return qs.filter(offer_status='published')
+
+    @detail_route(methods=['POST'], permission_classes=(IsAuthenticated,))
+    # pylint: disable=invalid-name
+    def join(self, request, pk):
+        """Endpoint to join offer by current user"""
+        offer = get_object_or_404(self.get_queryset(), id=pk)
+        offer.volunteers.add(request.user)
+        import sys
+        import ipdb
+        sys.stdout = sys.__stdout__
+        ipdb.set_trace()
+        message = request.data.get('message')
+
+        return Response(self.serializer_class(
+            offer, message,
+            context={'request': request}
+        ).data, status=201)
 
 
 class OrganizationViewSet(viewsets.ModelViewSet):
