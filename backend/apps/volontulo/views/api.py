@@ -227,14 +227,9 @@ class OfferViewSet(viewsets.ModelViewSet):
         """Endpoint to join offer by current user"""
         offer = get_object_or_404(self.get_queryset(), id=pk)
         offer.volunteers.add(request.user)
-        import sys
-        import ipdb
-        sys.stdout = sys.__stdout__
-        ipdb.set_trace()
-        message = request.data.get('message')
 
         return Response(self.serializer_class(
-            offer, message,
+            offer,
             context={'request': request}
         ).data, status=201)
 
