@@ -34,7 +34,6 @@ from apps.volontulo import permissions
 from apps.volontulo import serializers
 from apps.volontulo.authentication import CsrfExemptSessionAuthentication
 from apps.volontulo.lib.email import send_mail
-from apps.volontulo.models import Offer
 from apps.volontulo.models import Organization
 from apps.volontulo.models import UserProfile
 from apps.volontulo.serializers import (
