@@ -29,8 +29,7 @@ class TestAuthenticatedUserJoinOffer(APITestCase):
         post = self.client.get('/api/offers/{}/'.format(self.offer.id))
         self.assertEqual(post.data['joined'], False)
         response = self.client.post(reverse(
-            'offer-join', kwargs={'pk': self.offer.id})
-        )
+            'offer-join', kwargs={'pk': self.offer.id}))
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         post = self.client.get('/api/offers/1/')
         self.assertEqual(post.data['joined'], True)
