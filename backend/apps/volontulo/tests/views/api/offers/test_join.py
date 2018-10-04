@@ -13,7 +13,6 @@ from apps.volontulo.factories import OfferFactory
 
 
 class TestAuthenticatedUserJoinOffer(APITestCase):
-
     """Tests for REST API's join offer view for authenticated user."""
 
     def setUp(self):
@@ -37,16 +36,13 @@ class TestAuthenticatedUserJoinOffer(APITestCase):
     def test_user_join_not_existing_offer(self):
         """Test offer's 404 status for non existing offer."""
         response = self.client.post('/api/offers/1999999999999/join/')
-
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
 
-class TestNotAuthenticatedUserJoinOffer(TestOffersCommons, APITestCase):
-
-    """Tests for REST API's join offer view for not authenitcated user"""
+class TestNotAuthenticatedUserJoinOffer(APITestCase):
+    """Tests for REST API's join offer view for not authenitcated user."""
 
     def test_user_join_offer_not_authenticated(self):
         """Test offer's forbidden status for not logged in user."""
         response = self.client.post('/api/offers/1/join/')
-
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
