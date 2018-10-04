@@ -6,8 +6,6 @@ from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase
 
-from apps.volontulo.tests.views.offers.commons import TestOffersCommons
-
 from apps.volontulo.factories import UserFactory
 from apps.volontulo.factories import OfferFactory
 
