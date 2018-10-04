@@ -229,7 +229,7 @@ class OfferViewSet(viewsets.ModelViewSet):
         return Response(self.serializer_class(
             offer,
             context={'request': request}
-        ).data, status=201)
+        ).data, status.HTTP_201_CREATED)
 
 
 class OrganizationViewSet(viewsets.ModelViewSet):
