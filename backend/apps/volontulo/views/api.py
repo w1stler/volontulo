@@ -222,7 +222,7 @@ class OfferViewSet(viewsets.ModelViewSet):
     @detail_route(methods=['POST'], permission_classes=(IsAuthenticated,))
     # pylint: disable=invalid-name
     def join(self, request, pk):
-        """Endpoint to join offer by current user"""
+        """Endpoint to join offer by current user."""
         offer = get_object_or_404(self.get_queryset(), id=pk)
         offer.volunteers.add(request.user)
 
