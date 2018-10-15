@@ -13,9 +13,16 @@ from apps.volontulo.factories import UserFactory
 ENDPOINT_URL = reverse('api_logout')
 
 
-class TestLogoutView(APITestCase, TestCase):
+class TestLogoutViewAuthenticated(APITestCase, TestCase):
 
     def test_logout(self):
         user = self.client.force_login(UserFactory())
         res = self.client.post(ENDPOINT_URL, {user}, format='json')
         self.assertEqual(res.status_code, 200)
+
+
+class TestLogoutViewNotAuthenticated(APITestCase, TestCase):
+
+    def test_logout(self):
+        res = self.client.post(ENDPOINT_URL)
+        self.assertEqual(res.status_code, 400)
