@@ -16,8 +16,8 @@ ENDPOINT_URL = reverse('api_logout')
 class TestLogoutViewAuthenticated(APITestCase, TestCase):
 
     def test_logout(self):
-        user = self.client.force_login(UserFactory())
-        res = self.client.post(ENDPOINT_URL, {user}, format='json')
+        self.client.force_login(UserFactory())
+        res = self.client.post(ENDPOINT_URL)
         self.assertEqual(res.status_code, 200)
 
 
