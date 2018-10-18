@@ -341,11 +341,10 @@ class CurrentUser(APIView):
                 ).data,
                 status=status.HTTP_200_OK,
             )
-        else:
-            return Response(
-                None,
-                status=status.HTTP_200_OK,
-            )
+        return Response(
+            None,
+            status=status.HTTP_200_OK,
+        )
 
     def post(self, request):
         """Updates current user."""
