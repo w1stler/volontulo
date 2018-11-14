@@ -28,7 +28,6 @@ class TestOffersList(TestCase):
         OfferFactory.create_batch(
             31,
             offer_status='published',
-            finished_at=None,
             recruitment_end_date=None,
         )
         OfferFactory.create_batch(48, offer_status='unpublished')
@@ -44,7 +43,6 @@ class TestOffersList(TestCase):
         OfferFactory.create_batch(
             67,
             offer_status='published',
-            finished_at=None,
             recruitment_end_date=None,
         )
         OfferFactory.create_batch(73, offer_status='unpublished')
@@ -62,7 +60,6 @@ class TestOffersList(TestCase):
         OfferFactory.create_batch(
             96,
             offer_status='published',
-            finished_at=None,
             recruitment_end_date=None,
         )
         OfferFactory.create_batch(17, offer_status='unpublished')

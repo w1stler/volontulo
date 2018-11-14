@@ -20,14 +20,12 @@ class IsOfferJoinedFilterTestCase(APITestCase):
         OfferFactory.create_batch(
             67,
             offer_status='published',
-            finished_at=None,
             recruitment_end_date=None,
             volunteers=UserFactory.create_batch(20)
         )
         OfferFactory.create_batch(
             73,
             offer_status='published',
-            finished_at=None,
             recruitment_end_date=None,
             volunteers=UserFactory.create_batch(20) + [user]
         )

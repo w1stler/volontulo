@@ -51,7 +51,7 @@ class OffersManager(models.Manager):
 
         return self.filter(
             # that covers action_status__in=('ongoing', 'future'):
-            Q(finished_at__isnull=True) | Q(finished_at__gte=now),
+            Q(action_end_date__isnull=True) | Q(action_end_date__gte=now),
             # that covers recruitment_status__in=('ongoing', 'future'):
             Q(recruitment_end_date__isnull=True) |
             Q(recruitment_end_date__gte=now),
@@ -132,7 +132,7 @@ class Offer(models.Model):
 
         if self.action_start_date and self.action_start_date > now:
             return 'future'
-        if self.finished_at and self.finished_at < now:
+        if self.action_end_date and self.action_end_date < now:
             return 'finished'
         return 'ongoing'
 
