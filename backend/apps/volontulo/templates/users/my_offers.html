@@ -26,8 +26,8 @@
                                     <span aria-hidden="true" class="glyphicon glyphicon-time"></span>
                                 </div>
                                 <div class="media-body panel-body">
-                                    <span class="is-inline_block">{{ offer.started_at|date:'j E Y, G:m'|default:' teraz' }}</span> -
-                                    <span class="is-inline_block">{{ offer.finished_at|date:'j E Y, G:m'|default:' do ustalenia' }}</span>
+                                    <span class="is-inline_block">{{ offer.action_start_date|date:'j E Y, G:m'|default:' teraz' }}</span> -
+                                    <span class="is-inline_block">{{ offer.action_end_date|date:'j E Y, G:m'|default:' do ustalenia' }}</span>
                                 </div>
                             </div>
                             <div class="clearfix"></div>

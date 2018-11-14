@@ -118,7 +118,6 @@ class OfferSerializer(serializers.HyperlinkedModelSerializer):
             'benefits',
             'constant_coop',
             'description',
-            'finished_at',
             'id',
             'image',
             'joined',
@@ -134,7 +133,6 @@ class OfferSerializer(serializers.HyperlinkedModelSerializer):
             'reserve_recruitment_start_date',
             'reserve_volunteers_limit',
             'slug',
-            'started_at',
             'time_commitment',
             'time_period',
             'title',
@@ -142,8 +140,6 @@ class OfferSerializer(serializers.HyperlinkedModelSerializer):
             'volunteers_limit',
         )
     date_fields = [
-        'started_at',
-        'finished_at',
         'recruitment_end_date',
         'recruitment_start_date',
         'reserve_recruitment_start_date',
@@ -174,8 +170,6 @@ class OfferSerializer(serializers.HyperlinkedModelSerializer):
 
     def validate(self, attrs):
         data = super(OfferSerializer, self).validate(attrs)
-        self._validate_start_finish(data, 'started_at', 'finished_at',
-                                    self.start_finish_error)
         self._validate_start_finish(data, 'recruitment_start_date',
                                     'recruitment_end_date',
                                     self.recruitment_error)

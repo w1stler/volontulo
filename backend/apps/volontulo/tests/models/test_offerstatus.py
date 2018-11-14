@@ -25,57 +25,57 @@ class TestOfferStatusModel(TestCase):
 
         # closed offer (both dates in past)
         OfferFactory(
-            started_at=str(past - timedelta(days=2)),
-            finished_at=str(past),
+            action_start_date=str(past - timedelta(days=2)),
+            action_end_date=str(past),
             title='Offer 1',
         )
 
         # future offer (both dates in future)
         OfferFactory(
-            started_at=str(future),
-            finished_at=str(future + timedelta(days=2)),
+            action_start_date=str(future),
+            action_end_date=str(future + timedelta(days=2)),
             title='Offer 2',
         )
 
         # ongoing offer (start + end date)
         OfferFactory(
-            started_at=str(past),
-            finished_at=str(future),
+            action_start_date=str(past),
+            action_end_date=str(future),
             title='Offer 3',
         )
 
         # ongoing offer (start date, no ending before now)
         OfferFactory(
-            started_at=str(past),
-            finished_at=None,
+            action_start_date=str(past),
+            action_end_date=None,
             title='Offer 4',
         )
 
         # ongoing offer (end date, no start date)
         OfferFactory(
-            started_at=None,
-            finished_at=str(future),
+            action_start_date=None,
+            action_end_date=str(future),
             title='Offer 5',
         )
 
         # ongoing offer (no dates)
         OfferFactory(
-            started_at=None,
-            finished_at=None,
+            action_start_date=None,
+            action_end_date=None,
             title='Offer 6',
         )
 
         # closed offer (no start date, past end date)
         OfferFactory(
-            started_at=None,
-            finished_at=str(past),
+            action_start_date=None,
+            action_end_date=str(past),
             title='Offer 7',
         )
 
         # future offer (start date in future, no end date)
         OfferFactory(
-            started_at=str(future),
-            finished_at=None,
+            action_start_date=str(future),
+            action_end_date=None,
             title='Offer 8',
         )
 

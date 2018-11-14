@@ -85,8 +85,6 @@ class Offer(models.Model):
     benefits = models.TextField()
     location = models.CharField(max_length=150)
     title = models.CharField(max_length=150)
-    started_at = models.DateTimeField(blank=True, null=True)
-    finished_at = models.DateTimeField(blank=True, null=True)
     time_period = models.CharField(max_length=150, default='', blank=True)
     offer_status = models.CharField(
         max_length=16,
@@ -132,7 +130,7 @@ class Offer(models.Model):
         """Determine action status by offer dates."""
         now = timezone.now()
 
-        if self.started_at and self.started_at > now:
+        if self.action_start_date and self.action_start_date > now:
             return 'future'
         if self.finished_at and self.finished_at < now:
             return 'finished'

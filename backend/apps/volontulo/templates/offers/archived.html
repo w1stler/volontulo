@@ -22,8 +22,6 @@
                 <td>{{ o.location }}</td>
                 <td>{{ o.organization.name }}</td>
                 <td>{{ o.time_period }}</td>
-                <td>{{ o.started_at }}</td>
-                <td>{{ o.finished_at }}</td>
                 <td><a href="{{ ANGULAR_ROOT }}/offers/{{ o.title | slugify }}/{{ o.id }}">Podgląd</a></td>
             </tr>
         {% endfor %}

@@ -180,16 +180,16 @@ class OfferFactory(factory.DjangoModelFactory):
             for user in extracted:
                 self.volunteers.add(user)
 
-    @factory.lazy_attribute
-    def finished_at(self):
-        """Returns finished_at attribute based on started_at value.
-
-        Value will be between started_at and one year in future.
-        """
-        return factory.fuzzy.FuzzyDateTime(
-            self.started_at,
-            _offer_start_date_max,
-        ).fuzz() + datetime.timedelta(days=1)
+#    @factory.lazy_attribute
+#    def finished_at(self):
+#        """Returns finished_at attribute based on started_at value.
+#
+#        Value will be between started_at and one year in future.
+#        """
+#        return factory.fuzzy.FuzzyDateTime(
+#            self.action_start_date,
+#            _offer_start_date_max,
+#        ).fuzz() + datetime.timedelta(days=1)
 
     @factory.lazy_attribute
     def recruitment_end_date(self):
@@ -231,7 +231,7 @@ class OfferFactory(factory.DjangoModelFactory):
     benefits = factory.Faker("paragraph")
     location = factory.Faker("address", locale="pl_PL")
     title = factory.Faker("text", max_nb_chars=150)
-    started_at = factory.fuzzy.FuzzyDateTime(
+    action_start_date = factory.fuzzy.FuzzyDateTime(
         _offer_start_date_min,
         _offer_start_date_max,
     )

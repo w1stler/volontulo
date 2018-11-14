@@ -204,13 +204,13 @@ class OfferViewSet(viewsets.ModelViewSet):
     permission_classes = (permissions.OfferPermission,)
     filter_backends = (DjangoFilterBackend, IsOfferJoinedFilter)
     filter_fields = (
-        'finished_at',
+        'action_end_date',
         'location',
         'organization',
         'organization__id',
         'organization__name',
         'requirements',
-        'started_at',
+        'action_start_date',
         'recruitment_end_date'
     )
 
