@@ -17,8 +17,8 @@
       <td> <a [routerLink]="['/offers', offer.slug, offer.id]">{{ offer.title }}</a></td>
       <td> {{ offer.location }}</td>
       <td>
-        Od {{ offer.startedAt ? (offer.startedAt | date: 'dd MMMM yyyy, hh:mm') : 'teraz' }}
-        do {{ offer.finishedAt ? (offer.finishedAt | date: 'dd MMMM yyyy, hh:mm') : 'ustalenia' }}
+        Od {{ offer.actionStartDate ? (offer.actionStartDate | date: 'dd MMMM yyyy, hh:mm') : 'teraz' }}
+        do {{ offer.actionEndDate ? (offer.actionEndDate | date: 'dd MMMM yyyy, hh:mm') : 'ustalenia' }}
       </td>
       <td>
         <span class="badge badge-warning">{{ offer.offerStatus }}</span>

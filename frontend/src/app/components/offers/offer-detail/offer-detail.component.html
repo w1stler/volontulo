@@ -13,7 +13,7 @@
                         </div>
                         <div class="box">
                             <div class="icon"><fa-icon [icon]="faClock"></fa-icon></div>
-                            <div class="content">{{ offer.startedAt | date:'shortDate' }} - {{ offer.finishedAt | date:'shortDate' }}</div>
+                            <div class="content">{{ offer.actionStartDate | date:'shortDate' }} - {{ offer.actionEndDate | date:'shortDate' }}</div>
                         </div>
                         <div class="box" *ngIf="(isUserOrgMember$ | async)">
                             <div class="icon"><fa-icon [icon]="faEdit"></fa-icon></div>

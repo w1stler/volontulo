@@ -42,9 +42,9 @@ export class CreateOfferComponent implements OnInit, OnDestroy {
       title: ['', Validators.required],
       location: ['', Validators.required],
       organization: ['', Validators.required],
-      startedAt: [],
+      actionStartDate: [],
       actionOngoing: [false],
-      finishedAt: [],
+      actionEndDate: [],
       constantCoop: [false],
       recruitmentStartDate: [null],
       recruitmentEndDate: [null],
@@ -138,15 +138,15 @@ export class CreateOfferComponent implements OnInit, OnDestroy {
   }
 
   areDatesValid(form: FormGroup): {[key: string]: boolean} | null {
-    const { startedAt, actionOngoing, finishedAt, constantCoop } = form.value;
+    const { actionStartDate, actionOngoing, actionEndDate, constantCoop } = form.value;
     const validationErrors = {};
 
-    if (startedAt && actionOngoing) {
-      validationErrors['startedAtError'] = true;
+    if (actionStartDate && actionOngoing) {
+      validationErrors['actionStartDateError'] = true;
     }
 
-    if (finishedAt && constantCoop) {
-      validationErrors['finishedAtError'] = true;
+    if (actionEndDate && constantCoop) {
+      validationErrors['actionEndDateError'] = true;
     }
 
     const hasAnyError = Object.keys(validationErrors).length > 0;

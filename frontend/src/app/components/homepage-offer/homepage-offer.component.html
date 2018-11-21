@@ -15,9 +15,9 @@
       </li>
       <li class="list-group-item">
         <div>
-          Od {{ offer.startedAt ? (offer.startedAt | date: 'dd MMMM yyyy, hh:mm'): 'teraz' }}
+          Od {{ offer.actionStartDate ? (offer.actionStartDate | date: 'dd MMMM yyyy, hh:mm'): 'teraz' }}
         </div>
-        <div>do {{ offer.finishedAt ? (offer.finishedAt | date: 'dd MMMM yyyy, hh:mm'): 'ustalenia' }}</div>
+        <div>do {{ offer.actionEndDate ? (offer.actionEndDate | date: 'dd MMMM yyyy, hh:mm'): 'ustalenia' }}</div>
       </li>
       <div class="offer-organizer">
         <span>Organizator:

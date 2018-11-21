@@ -6,7 +6,7 @@ export class Offer {
     benefits: string;
     constantCoop: boolean;
     description: string;
-    finishedAt: string | null;
+    actionEndDate: string | null;
     id: number;
     image: string;
     joined: boolean;
@@ -21,7 +21,7 @@ export class Offer {
     reserveRecruitmentStartDate: string | null;
     reserveVolunteersLimit: number;
     slug: string;
-    startedAt: string | null;
+    actionStartDate: string | null;
     timeCommitment: string;
     title: string;
     url: string;

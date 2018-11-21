@@ -46,14 +46,14 @@
       <div class="col-sm-3">Określ organizację odpowiedzialną za wolontariat.</div>
     </div>
     <h3>Realizacja akcji:</h3>
-    <div class="form-group row startedAt">
-      <label for="startedAt" class="col-sm-3 col-form-label">Dzień rozpoczęcia:</label>
+    <div class="form-group row actionStartDate">
+      <label for="actionStartDate" class="col-sm-3 col-form-label">Dzień rozpoczęcia:</label>
       <div class="col-sm-6">
         <div class="row">
           <div class="col-sm-6">
             <div class="form-check form-check-inline">
               <div class="input-group">
-                <input placeholder="RRRR-MM-DD" type="datetime" id="startedAt" class="form-control" formControlName="startedAt">
+                <input placeholder="RRRR-MM-DD" type="datetime" id="actionStartDate" class="form-control" formControlName="actionStartDate">
               </div>
             </div>
           </div>
@@ -64,13 +64,13 @@
           </div>
         </div>
         <div class="col-sm-12 errors">
-          <span class="form-text text-muted" *ngIf="form.errors?.startedAtError">Jeśli akcja już trwa, nie podawaj daty początkowej.</span>
+          <span class="form-text text-muted" *ngIf="form.errors?.actionStartDateError">Jeśli akcja już trwa, nie podawaj daty początkowej.</span>
         </div>
       </div>
       <div class="col-sm-3">Określ datę rozpoczęcia akcji w formacie RRRR-MM-DD.</div>
     </div>
-    <div class="form-group row finishedAt">
-      <label for="finishedAt" class="col-sm-3 col-form-label">Dzień zakończenia:</label>
+    <div class="form-group row actionEndDate">
+      <label for="actionEndDate" class="col-sm-3 col-form-label">Dzień zakończenia:</label>
       <div class="col-sm-6">
         <div class="row">
           <div class="col-sm-6">
@@ -95,7 +95,7 @@
       <div class="col-sm-3">Określ datę zakończenia akcji w formacie RRRR-MM-DD.</div>
     </div>
     <div class="form-group row">
-      <label for="startedAt" class="col-sm-3 col-form-label">Rekrutacja:</label>
+      <label for="actionStartDate" class="col-sm-3 col-form-label">Rekrutacja:</label>
       <div class="col-sm-6">
         <div class="form-check form-check-inline">
           <div class="card">
