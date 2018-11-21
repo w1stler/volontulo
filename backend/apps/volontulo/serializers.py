@@ -114,6 +114,8 @@ class OfferSerializer(serializers.HyperlinkedModelSerializer):
         model = models.Offer
         fields = (
             'action_ongoing',
+            'action_start_date',
+            'action_end_date',
             'action_status',
             'benefits',
             'constant_coop',
@@ -143,7 +145,9 @@ class OfferSerializer(serializers.HyperlinkedModelSerializer):
         'recruitment_end_date',
         'recruitment_start_date',
         'reserve_recruitment_start_date',
-        'reserve_recruitment_end_date'
+        'reserve_recruitment_end_date',
+        'action_start_date',
+        'action_end_date'
     ]
     start_finish_error = (
         "Data rozpoczęcia akcji nie może być "
