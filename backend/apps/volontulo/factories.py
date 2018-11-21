@@ -180,17 +180,6 @@ class OfferFactory(factory.DjangoModelFactory):
             for user in extracted:
                 self.volunteers.add(user)
 
-#    @factory.lazy_attribute
-#    def finished_at(self):
-#        """Returns finished_at attribute based on started_at value.
-#
-#        Value will be between started_at and one year in future.
-#        """
-#        return factory.fuzzy.FuzzyDateTime(
-#            self.action_start_date,
-#            _offer_start_date_max,
-#        ).fuzz() + datetime.timedelta(days=1)
-
     @factory.lazy_attribute
     def recruitment_end_date(self):
         """Returns recruitment_end_date attribute.

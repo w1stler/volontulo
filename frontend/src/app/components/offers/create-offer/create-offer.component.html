@@ -76,7 +76,7 @@
           <div class="col-sm-6">
             <div class="form-check form-check-inline">
               <div class="input-group">
-                <input type="datetime" placeholder="RRRR-MM-DD" class="form-control" id="finishedAt" formControlName="finishedAt">
+                <input type="datetime" placeholder="RRRR-MM-DD" class="form-control" id="actionEndDate" formControlName="actionEndDate">
               </div>
             </div>
           </div>
@@ -87,7 +87,7 @@
           </div>
         </div>
         <div class="col-sm-12 errors">
-          <span class="form-text text-muted" *ngIf="form.errors?.finishedAtError">
+          <span class="form-text text-muted" *ngIf="form.errors?.actionEndDateError">
             Jeśli akcja nie kończy się, nie podawaj daty końcowej.
           </span>
         </div>
