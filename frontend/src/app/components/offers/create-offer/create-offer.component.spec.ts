@@ -64,7 +64,7 @@ describe('CreateOfferComponent', () => {
         actionOngoing: true,
       });
 
-      expect(component.form.errors.hasOwnProperty('actionStartedDateError')).toBe(true);
+      expect(component.form.errors.hasOwnProperty('actionStartDateError')).toBe(true);
       expect(component.form.errors.actionStartedDateError).toBe(true);
     });
 
