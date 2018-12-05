@@ -176,10 +176,9 @@ class OfferFactoryTestCase(TestCase):
 
     def test_offers_datatime_fields(self):
         """Test if offers date fields are proper type and in proper order."""
-        # self.assertIsInstance(self.offer.action_start_date, datetime.datetime)
         self.assertIsInstance(self.offer.action_start_date, datetime.datetime)
         self.assertGreater(
-            self.offer.action_end_date, self.offer.action_start_date
+            self.offer.action_end_date, self.offer.action_startg_date
         )
 
         self.assertIsInstance(
