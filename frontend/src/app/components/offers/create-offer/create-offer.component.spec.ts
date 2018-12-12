@@ -65,7 +65,7 @@ describe('CreateOfferComponent', () => {
       });
 
       expect(component.form.errors.hasOwnProperty('actionStartDateError')).toBe(true);
-      expect(component.form.errors.actionStartedDateError).toBe(true);
+      expect(component.form.errors.actionStartDateError).toBe(true);
     });
 
     it('should set invalid status when actionEndDate and constantCoop are filled', () => {
